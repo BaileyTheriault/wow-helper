@@ -32,7 +32,7 @@ bot.on('message', msg => {
 
           const itemEmbed = {
             color: 0x0099ff,
-            image: {
+            thumbnail: {
               url: item.thumbnail
             },
             title: item.itemName,
