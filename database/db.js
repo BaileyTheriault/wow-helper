@@ -4,15 +4,17 @@ mongoose.connect('mongodb://localhost:27017/pusheen_assistant', { useNewUrlParse
 
 const Tailoring = mongoose.model('Tailoring', new mongoose.Schema(), 'tailoring');
 
-async function taiFindOne(item) {
-  return Tailoring.findOne({ itemName: item }, (err, doc) => {
+const taiFindOne = (item) => {
+  const data = new RegExp(`${item}`, 'i')
+  return Tailoring.findOne({ itemName: data }, (err, doc) => {
     if (err) return console.error(err);
+    console.log(doc)
     return doc;
   })
 };
 
-async function taiFindMany(startNum, endNum) {
-  return Tailoring.find({$and: [{levelRequired: {$gte: startNum}}, {levelRequired: {$lte: endNum}} ]}, (err, results) => {
+const taiFindMany = (startNum, endNum) => {
+  return Tailoring.find({$and: [{levelRequired: {$gte: startNum}}, {levelRequired: {$lte: endNum}}]}, (err, results) => {
     if (err) return console.error(err);
     return results;
   });
