@@ -36,7 +36,8 @@ bot.on('message', msg => {
           fields: materials.fields,
           timestamp: new Date(),
         };
-
+       
+        console.log(`Serving request ${msg.content}`)
         msg.reply({ embed: itemEmbed })
       })
   }
