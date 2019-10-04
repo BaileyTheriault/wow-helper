@@ -5,7 +5,7 @@ const bot = new Discord.Client();
 const db = require('./database/db');
 
 bot.on('ready', () => {
-  console.log('Bot in online!');
+  console.log('Bot is online!');
 });
 
 bot.on('message', msg => {
