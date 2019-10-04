@@ -29,7 +29,7 @@ bot.on('message', msg => {
           ) 
         });
 
-        const exampleEmbed = {
+        const itemEmbed = {
           color: 0x0099ff,
           title: item.itemName,
           url: item.itemLink,
@@ -37,7 +37,7 @@ bot.on('message', msg => {
           timestamp: new Date(),
         };
 
-        msg.reply({ embed: exampleEmbed })
+        msg.reply({ embed: itemEmbed })
       })
   }
 });
