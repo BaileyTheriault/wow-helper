@@ -1,0 +1,17 @@
+{
+  "name": "wow-helper",
+  "version": "1.0.0",
+  "description": "Displays crafting recipes and leveling zones",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "VincentCSS",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.1.0",
+    "mongoose": "^5.7.1"
+  }
+}
