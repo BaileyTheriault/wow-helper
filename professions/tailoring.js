@@ -10,15 +10,25 @@ const taiItemQuery = (msg) => {
         fields: []
       };
 
-      item.materials.map(mat => {
+      const itemMat = item.materials.split('x ')
+      let correctData = [itemMat[0]];
+
+      for (let i = 1; i < itemMat.length - 1; i++) {
+        let reformatSplit = itemMat[i].split(' ');
+        correctData.push(reformatSplit.slice(0, reformatSplit.length - 1).join(' '), reformatSplit[reformatSplit.length - 1]);
+      }
+
+      correctData.push(itemMat[itemMat.length - 1]);
+
+      for (let i = 0; i < correctData.length; i = i + 2) {
         materials.fields.push(
           {
-            name: mat[0],
-            value: mat[1],
-            inline: true
+            name: correctData[i + 1],
+            value: correctData[i],
+            inline: false
           }
-        )
-      });
+        );
+      }
 
       const itemEmbed = {
         color: 0x0099ff,
